@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.0.16",
+    "axios": "^1.6.2",
     "sass": "^1.69.5",
     "vue": "^3.3.11"
   },

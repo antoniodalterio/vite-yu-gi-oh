@@ -1,9 +1,21 @@
-<script setup></script>
+<script>
+import { store } from './store.js';
+import AppHeader from './components/AppHeader.vue';
+
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+  components: {
+    AppHeader,
+  },
+};
+</script>
 
 <template>
-  <div>
-    <h1>belllllllllllllllllllll</h1>
-  </div>
+  <AppHeader></AppHeader>
 </template>
 
-<style scoped></style>
+<style></style>
