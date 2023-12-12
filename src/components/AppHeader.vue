@@ -5,10 +5,11 @@ export default {
 </script>
 <template>
   <header>
+    <!-- contenitore img -->
     <div class="container-img">
       <img src="../assets/img/Yu-Gi-Oh.png" alt="logo" />
     </div>
-
+    <!-- contenitore img -->
     <h1>Yu-Gi-Oh Api</h1>
   </header>
 </template>
@@ -16,6 +17,7 @@ export default {
 header {
   padding: 20px;
   display: flex;
+  background-color: white;
   align-items: center;
   gap: 20px;
 

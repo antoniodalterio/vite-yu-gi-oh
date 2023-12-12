@@ -1,3 +1,3 @@
 <script></script>
 <template></template>
-<style scoper lang="scss"></style>
+<style scoped lang="scss"></style>
