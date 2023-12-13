@@ -1,11 +1,12 @@
 <script>
 export default {
   nome: 'MainFound',
+  props: ['found'],
 };
 </script>
 <template>
   <div>
-    <h4>Found 13123 cards</h4>
+    <h4>Found {{ found }} cards</h4>
   </div>
 </template>
 <style scoped lang="scss">

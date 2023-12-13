@@ -1,5 +1,6 @@
 <script>
 import MainCards from './MainCards.vue';
+
 export default {
   name: 'MainContent',
   components: {
@@ -27,8 +28,9 @@ export default {
 section {
   select {
     width: 10%;
+    border-radius: 5px;
     padding: 5px;
-    margin-top: 20px;
+    margin: 20px 10px;
   }
 }
 </style>
