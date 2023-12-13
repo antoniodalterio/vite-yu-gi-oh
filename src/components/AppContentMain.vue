@@ -1,5 +1,8 @@
 <script>
 import MainCards from './MainCards.vue';
+import axios from 'axios';
+import { store } from '../store.js';
+import AppHeader from './AppHeader.vue';
 
 export default {
   name: 'MainContent',
@@ -7,7 +10,23 @@ export default {
     MainCards,
   },
   data() {
-    return {};
+    return {
+      store,
+    };
+  },
+  created() {
+    axios.get(store.archetypeApi).then((response) => {
+      store.archetype = response.data;
+    });
+  },
+  methods: {
+    search() {
+      axios
+        .get(`${store.apiUrl}&archetype=${store.status}`)
+        .then((response) => {
+          store.cards = response.data.data;
+        });
+    },
   },
 };
 </script>
@@ -15,9 +34,19 @@ export default {
   <section>
     <!-- contenitore Select -->
     <div class="container">
-      <select name="type-cards" id="type-card" value="Alien">
-        <option value="Alien">Alien</option>
-      </select>
+      <form @submit.prevent="">
+        <select
+          name="type-cards"
+          id="type-card"
+          v-model="store.status"
+          @click="search()"
+        >
+          <option value="">Select Archetype</option>
+          <option v-for="op in store.archetype" :value="op.archetype_name">
+            {{ op.archetype_name }}
+          </option>
+        </select>
+      </form>
     </div>
     <!-- contenitore Select -->
 
